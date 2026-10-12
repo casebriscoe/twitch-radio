@@ -8,13 +8,13 @@ import streamlink
 
 from stream_data import StreamData, StreamProcManager
 from twitch_api import get_followed_twitch_streams
-from keys import evan_oauth_token, app_client_id, evan_user_id, evan_user_access_token
+from keys import evan_oauth_token, rlee_user_id, radio_access_token, radio_client_id
 
 proc_manager = StreamProcManager(evan_oauth_token)
 
 proc = None
 while True:    
-    streams = get_followed_twitch_streams(app_client_id, evan_user_id, evan_user_access_token)
+    streams = get_followed_twitch_streams(radio_client_id, rlee_user_id, radio_access_token)
     for i, stream in enumerate(streams):
         print(i)
         print(stream.quick_info_str())
